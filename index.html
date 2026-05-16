@@ -3,100 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Otari-Wilton Community Energy Pilot — exploring solar, battery options, sustainability, lower power bills and community energy ideas in Wilton, Wellington."
-  />
+  <meta name="description" content="Otari-Wilton Community Energy Pilot — a community-led idea for solar, sustainability and lower energy costs in Wilton, Wellington." />
   <title>Otari-Wilton Community Energy Pilot</title>
-
   <style>
     :root {
-      --forest: #183d2f;
-      --leaf: #2f7d59;
-      --sun: #f4b942;
-      --cream: #f7f3e8;
-      --paper: #ffffff;
-      --ink: #1e2521;
+      --green: #173f31;
+      --green-2: #2d7f5e;
+      --gold: #f3b944;
+      --cream: #f7f1e3;
+      --white: #ffffff;
+      --text: #23302a;
       --muted: #5d6b63;
-      --line: rgba(24, 61, 47, 0.16);
-      --shadow: 0 24px 70px rgba(20, 40, 30, 0.18);
-      --radius: 24px;
+      --line: rgba(23, 63, 49, 0.16);
+      --shadow: 0 18px 50px rgba(20, 45, 32, 0.14);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(244, 185, 66, 0.22), transparent 32rem),
-        linear-gradient(180deg, var(--cream), #eef5ee 58%, #ffffff);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
     .wrap {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
     }
 
     header {
-      padding: 22px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(247, 243, 232, 0.78);
-      border-bottom: 1px solid rgba(24, 61, 47, 0.08);
+      background: rgba(247, 241, 227, 0.96);
+      border-bottom: 1px solid var(--line);
     }
 
     nav {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
+      color: var(--green);
       font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--forest);
+      text-decoration: none;
     }
 
     .logo {
       width: 42px;
       height: 42px;
+      border-radius: 14px;
+      background: var(--green);
+      color: var(--gold);
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: var(--forest);
-      color: var(--sun);
-      box-shadow: 0 10px 30px rgba(24, 61, 47, 0.2);
       font-size: 22px;
+      flex: 0 0 auto;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
-      font-size: 0.96rem;
+      gap: 18px;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .nav-links a {
+      color: inherit;
       text-decoration: none;
     }
 
@@ -104,382 +86,253 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 20px;
+      padding: 13px 20px;
       border-radius: 999px;
-      border: 0;
+      background: var(--green);
+      color: #fff !important;
       text-decoration: none;
       font-weight: 800;
-      background: var(--forest);
-      color: #fff;
-      box-shadow: 0 14px 30px rgba(24, 61, 47, 0.24);
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(24, 61, 47, 0.28);
+      border: 0;
+      box-shadow: 0 10px 25px rgba(23, 63, 49, 0.2);
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.8);
-      color: var(--forest);
+      background: #fff;
+      color: var(--green) !important;
       border: 1px solid var(--line);
       box-shadow: none;
     }
 
+    section { padding: 64px 0; }
+
     .hero {
-      padding: 76px 0 54px;
+      padding: 84px 0 70px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(243, 185, 68, 0.28), transparent 30rem),
+        linear-gradient(180deg, #fbf6ea, var(--cream));
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 42px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 46px;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
+      display: inline-block;
+      padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(47, 125, 89, 0.12);
-      color: var(--forest);
+      background: rgba(45, 127, 94, 0.12);
+      color: var(--green);
       font-weight: 800;
       font-size: 0.88rem;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 5.8rem);
-      line-height: 0.95;
       margin: 0 0 22px;
-      letter-spacing: -0.07em;
-      color: var(--forest);
+      color: var(--green);
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
     }
 
-    .hero p {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
+    .hero p, .section-intro {
       color: var(--muted);
-      max-width: 680px;
-      margin: 0 0 28px;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 0 26px;
     }
 
     .cta-row {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
-    .hero-card {
-      position: relative;
-      border-radius: 36px;
-      background: linear-gradient(150deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.58));
-      border: 1px solid rgba(255, 255, 255, 0.7);
+    .illustration {
+      min-height: 390px;
+      border-radius: 32px;
+      background: #fff;
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
       padding: 28px;
-      min-height: 470px;
     }
 
     .sun {
-      width: 134px;
-      height: 134px;
-      background: var(--sun);
-      border-radius: 999px;
+      width: 120px;
+      height: 120px;
+      background: var(--gold);
+      border-radius: 50%;
       margin-left: auto;
-      box-shadow:
-        0 0 0 18px rgba(244, 185, 66, 0.17),
-        0 0 0 42px rgba(244, 185, 66, 0.08);
+      box-shadow: 0 0 0 18px rgba(243, 185, 68, 0.18), 0 0 0 40px rgba(243, 185, 68, 0.08);
     }
 
-    .hills {
+    .hill1, .hill2 {
       position: absolute;
-      inset: auto 0 0;
-      height: 250px;
-      background:
-        radial-gradient(70% 100% at 18% 100%, #2f7d59 0 58%, transparent 59%),
-        radial-gradient(88% 110% at 80% 100%, #183d2f 0 62%, transparent 63%),
-        linear-gradient(180deg, transparent, rgba(24, 61, 47, 0.06));
+      bottom: -50px;
+      width: 76%;
+      height: 210px;
+      border-radius: 50% 50% 0 0;
     }
 
-    .panel {
+    .hill1 { left: -90px; background: var(--green-2); }
+    .hill2 { right: -130px; background: var(--green); height: 250px; }
+
+    .mini-card {
       position: absolute;
       left: 28px;
-      bottom: 34px;
-      width: min(320px, calc(100% - 56px));
+      bottom: 28px;
+      right: 28px;
+      max-width: 330px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.8);
       border-radius: 22px;
       padding: 18px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.12);
     }
 
-    .panel strong {
-      display: block;
-      color: var(--forest);
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .panel span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    section {
-      padding: 54px 0;
-    }
+    .mini-card strong { display: block; color: var(--green); margin-bottom: 6px; }
+    .mini-card span { color: var(--muted); font-size: 0.95rem; }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.02;
-      letter-spacing: -0.055em;
-      color: var(--forest);
       margin: 0 0 16px;
+      color: var(--green);
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
     }
 
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.12rem;
-      margin: 0 0 30px;
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .cards, .number-list, .check-list, .steps {
+      display: grid;
+      gap: 16px;
     }
 
     .cards {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
     }
 
-    .card {
-      background: var(--paper);
+    .card, .list-item, .step {
+      background: #fff;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 14px 40px rgba(20, 40, 30, 0.08);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(20, 45, 32, 0.08);
     }
 
-    .card .icon {
+    .card-icon {
       width: 46px;
       height: 46px;
+      border-radius: 16px;
+      background: rgba(243, 185, 68, 0.2);
       display: grid;
       place-items: center;
-      border-radius: 16px;
-      background: rgba(244, 185, 66, 0.18);
-      margin-bottom: 16px;
-      font-size: 23px;
+      font-size: 24px;
+      margin-bottom: 14px;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      color: var(--forest);
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .list {
-      display: grid;
-      gap: 12px;
-    }
+    h3 { margin: 0 0 8px; color: var(--green); line-height: 1.25; }
+    p { margin-top: 0; }
 
     .list-item {
       display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 12px;
-      align-items: start;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
     }
 
-    .tick {
-      width: 36px;
-      height: 36px;
+    .badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      border-radius: 12px;
-      background: var(--leaf);
-      color: white;
+      background: var(--green-2);
+      color: #fff;
       font-weight: 900;
     }
 
-    .callout {
-      background: var(--forest);
-      color: #fff;
-      border-radius: 34px;
-      padding: clamp(28px, 5vw, 48px);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
+    .list-item p, .card p, .step p { color: var(--muted); margin: 0; }
 
-    .callout::after {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      right: -70px;
-      top: -70px;
-      background: var(--sun);
-      border-radius: 999px;
-      opacity: 0.35;
+    .callout {
+      background: var(--green);
+      color: #fff;
+      border-radius: 30px;
+      padding: clamp(28px, 5vw, 46px);
+      box-shadow: var(--shadow);
     }
 
     .callout h2 {
       margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4.4vw, 3.3rem);
       line-height: 1;
-      letter-spacing: -0.055em;
-      max-width: 760px;
-      position: relative;
-      z-index: 1;
+      letter-spacing: -0.05em;
     }
 
-    .callout p {
-      position: relative;
-      z-index: 1;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 1.12rem;
-      max-width: 760px;
-      margin: 0 0 24px;
-    }
-
-    .steps {
-      counter-reset: step;
-      display: grid;
-      gap: 14px;
-    }
-
-    .step {
-      counter-increment: step;
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 16px;
-      align-items: start;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-    }
-
-    .step::before {
-      content: counter(step);
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 18px;
-      background: var(--forest);
-      color: var(--sun);
-      font-size: 1.3rem;
-      font-weight: 900;
-    }
-
-    .step h3 {
-      margin: 0 0 4px;
-      color: var(--forest);
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--muted);
-    }
+    .callout p { color: rgba(255,255,255,0.84); max-width: 800px; }
 
     .form-box {
       background: #fff;
-      border-radius: 34px;
       border: 1px solid var(--line);
-      padding: clamp(22px, 4vw, 36px);
+      border-radius: 30px;
+      padding: clamp(24px, 4vw, 38px);
       box-shadow: var(--shadow);
     }
 
-    .form-note {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(47, 125, 89, 0.1);
-      color: var(--forest);
-      margin: 18px 0 0;
-      font-size: 0.98rem;
-    }
-
     .placeholder-form {
-      border: 2px dashed rgba(24, 61, 47, 0.22);
+      border: 2px dashed rgba(23, 63, 49, 0.22);
       border-radius: 22px;
       padding: 28px;
+      background: #fbf7ed;
       text-align: center;
-      background: #fbfaf5;
     }
 
-    .placeholder-form p {
-      margin: 0 0 18px;
-      color: var(--muted);
+    .form-note {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(45, 127, 94, 0.1);
+      color: var(--green);
+      font-size: 0.95rem;
     }
 
     footer {
-      padding: 36px 0 50px;
+      padding: 34px 0 46px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
     footer .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 14px;
       border-top: 1px solid var(--line);
       padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 860px) {
-      .hero-grid,
-      .split,
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 44px;
-      }
-
-      .hero-card {
-        min-height: 360px;
-      }
+      .hero-grid, .two-col, .cards { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      nav { min-height: 68px; }
+      .hero { padding-top: 54px; }
+      .illustration { min-height: 320px; }
     }
 
     @media (max-width: 520px) {
-      .wrap {
-        width: min(100% - 28px, 1120px);
-      }
-
-      .cta-row .button {
-        width: 100%;
-      }
-
-      .step {
-        grid-template-columns: 1fr;
-      }
+      .wrap { width: min(100% - 24px, 1080px); }
+      .cta-row .button { width: 100%; }
+      .list-item { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -487,11 +340,10 @@
 <body>
   <header>
     <nav class="wrap">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">☀</div>
+      <a class="brand" href="#top" aria-label="Otari-Wilton Energy home">
+        <span class="logo" aria-hidden="true">☀</span>
         <span>Otari-Wilton Energy</span>
-      </div>
-
+      </a>
       <div class="nav-links">
         <a href="#story">Why this?</a>
         <a href="#idea">The idea</a>
@@ -502,38 +354,35 @@
     </nav>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">Community-led · early-stage idea · Wilton, Wellington</div>
-
           <h1>Could Otari-Wilton become a community energy pilot?</h1>
-
           <p>
             We’re exploring solar, battery options, neighbourhood energy savings and possible small-scale wind feasibility for community sites and nearby homes around Otari-Wilton.
           </p>
-
           <div class="cta-row">
             <a class="button" href="#register">Register interest</a>
             <a class="button secondary" href="#story">Why we’re doing this</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Community energy illustration">
+        <div class="illustration" aria-label="Community energy illustration">
           <div class="sun" aria-hidden="true"></div>
-          <div class="hills" aria-hidden="true"></div>
-
-          <div class="panel">
+          <div class="hill1" aria-hidden="true"></div>
+          <div class="hill2" aria-hidden="true"></div>
+          <div class="mini-card">
             <strong>Solar + batteries + local sustainability</strong>
             <span>A practical pilot idea for neighbours, community buildings and lower energy costs.</span>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
     <section id="story">
-      <div class="wrap split">
+      <div class="wrap two-col">
         <div>
           <h2 class="section-title">Why we’re starting this</h2>
           <p class="section-intro">
@@ -544,36 +393,36 @@
           </p>
         </div>
 
-        <div class="list">
+        <div class="number-list">
           <div class="list-item">
-            <div class="tick">1</div>
+            <div class="badge">1</div>
             <div>
-              <strong>Making our home more sustainable</strong><br />
-              We’re rejuvenating our home and want to do it in a way that lowers our energy use, reduces our power bills and makes better use of renewable energy.
+              <h3>Making our home more sustainable</h3>
+              <p>We’re rejuvenating our home and want to do it in a way that lowers our energy use, reduces our power bills and makes better use of renewable energy.</p>
             </div>
           </div>
 
           <div class="list-item">
-            <div class="tick">2</div>
+            <div class="badge">2</div>
             <div>
-              <strong>Solar can be expensive alone</strong><br />
-              Like many people, we quickly found that solar panels and batteries can involve a significant upfront cost, especially if you want a system that makes a real difference.
+              <h3>Solar can be expensive alone</h3>
+              <p>Like many people, we quickly found that solar panels and batteries can involve a significant upfront cost, especially if you want a system that makes a real difference.</p>
             </div>
           </div>
 
           <div class="list-item">
-            <div class="tick">3</div>
+            <div class="badge">3</div>
             <div>
-              <strong>What if we explored it together?</strong><br />
-              Instead of every household solving this alone, we’re exploring whether a community-led approach could help nearby homes, community facilities and local organisations.
+              <h3>What if we explored it together?</h3>
+              <p>Instead of every household solving this alone, we’re exploring whether a community-led approach could help nearby homes, community facilities and local organisations.</p>
             </div>
           </div>
 
           <div class="list-item">
-            <div class="tick">4</div>
+            <div class="badge">4</div>
             <div>
-              <strong>A pilot other communities could copy</strong><br />
-              Otari-Wilton has a unique mix of homes, community spaces and local identity. If this works here, it could become a model for other Wellington suburbs.
+              <h3>A pilot other communities could copy</h3>
+              <p>Otari-Wilton has a unique mix of homes, community spaces and local identity. If this works here, it could become a model for other Wellington suburbs.</p>
             </div>
           </div>
         </div>
@@ -583,26 +432,25 @@
     <section id="idea">
       <div class="wrap">
         <h2 class="section-title">The idea</h2>
-
         <p class="section-intro">
           This is not a fixed proposal yet. The first step is simply to find out whether local residents, community organisations, Council and energy partners are interested in exploring a practical community energy project.
         </p>
 
         <div class="cards">
           <article class="card">
-            <div class="icon" aria-hidden="true">🏠</div>
+            <div class="card-icon" aria-hidden="true">🏠</div>
             <h3>Neighbourhood bulk-buy</h3>
             <p>Interested homes could explore group pricing for solar, battery-ready systems or battery storage.</p>
           </article>
 
           <article class="card">
-            <div class="icon" aria-hidden="true">🔋</div>
+            <div class="card-icon" aria-hidden="true">🔋</div>
             <h3>Community buildings</h3>
             <p>Suitable local facilities could investigate solar and batteries to lower operating costs and support sustainable energy use.</p>
           </article>
 
           <article class="card">
-            <div class="icon" aria-hidden="true">🌬️</div>
+            <div class="card-icon" aria-hidden="true">🌬️</div>
             <h3>Wind feasibility</h3>
             <p>Because Wilton is hilly and windy, small-scale wind could be investigated as an add-on if it stacks up.</p>
           </article>
@@ -611,37 +459,36 @@
     </section>
 
     <section id="why">
-      <div class="wrap split">
+      <div class="wrap two-col">
         <div>
           <h2 class="section-title">Why Otari-Wilton?</h2>
-
           <p class="section-intro">
             The area has a rare mix of community facilities, nearby homes, bush reserve identity and a strong case for a locally led sustainability project.
           </p>
         </div>
 
-        <div class="list">
+        <div class="check-list">
           <div class="list-item">
-            <div class="tick">✓</div>
+            <div class="badge">✓</div>
             <div>
-              <strong>Community anchor sites nearby</strong><br />
-              Potential links with the community centre, preschool, lawn bowls club and other local organisations.
+              <h3>Community anchor sites nearby</h3>
+              <p>Potential links with the community centre, preschool, lawn bowls club and other local organisations.</p>
             </div>
           </div>
 
           <div class="list-item">
-            <div class="tick">✓</div>
+            <div class="badge">✓</div>
             <div>
-              <strong>Lower energy costs</strong><br />
-              Community facilities and households could explore ways to reduce energy costs and make renewable energy more accessible.
+              <h3>Lower energy costs</h3>
+              <p>Community facilities and households could explore ways to reduce energy costs and make renewable energy more accessible.</p>
             </div>
           </div>
 
           <div class="list-item">
-            <div class="tick">✓</div>
+            <div class="badge">✓</div>
             <div>
-              <strong>Replicable pilot</strong><br />
-              If this works here, the model could be shared with other Wellington suburbs.
+              <h3>Replicable pilot</h3>
+              <p>If this works here, the model could be shared with other Wellington suburbs.</p>
             </div>
           </div>
         </div>
@@ -652,21 +499,18 @@
       <div class="wrap">
         <div class="callout">
           <h2>No commitment yet — we’re just measuring interest.</h2>
-
           <p>
             Registering interest helps show whether there is enough local support to talk seriously with Council, community organisations, installers, Wellington Electricity and potential funders.
           </p>
-
           <a class="button" href="#register">Add your name</a>
         </div>
       </div>
     </section>
 
     <section id="steps">
-      <div class="wrap split">
+      <div class="wrap two-col">
         <div>
           <h2 class="section-title">What happens next?</h2>
-
           <p class="section-intro">
             The project will only move forward if there is enough community interest and the technical, legal and financial details make sense.
           </p>
@@ -674,31 +518,20 @@
 
         <div class="steps">
           <div class="step">
-            <div>
-              <h3>Gather local interest</h3>
-              <p>Collect names from residents, community groups and potential anchor sites.</p>
-            </div>
+            <h3>Gather local interest</h3>
+            <p>Collect names from residents, community groups and potential anchor sites.</p>
           </div>
-
           <div class="step">
-            <div>
-              <h3>Speak to key partners</h3>
-              <p>Approach Council, community organisations, Wellington Electricity and solar/battery installers.</p>
-            </div>
+            <h3>Speak to key partners</h3>
+            <p>Approach Council, community organisations, Wellington Electricity and solar/battery installers.</p>
           </div>
-
           <div class="step">
-            <div>
-              <h3>Request early feasibility advice</h3>
-              <p>Check likely system sizes, battery options, costs, network limits and whether wind is worth exploring.</p>
-            </div>
+            <h3>Request early feasibility advice</h3>
+            <p>Check likely system sizes, battery options, costs, network limits and whether wind is worth exploring.</p>
           </div>
-
           <div class="step">
-            <div>
-              <h3>Share the findings</h3>
-              <p>Report back to interested locals before any decisions or commitments are made.</p>
-            </div>
+            <h3>Share the findings</h3>
+            <p>Report back to interested locals before any decisions or commitments are made.</p>
           </div>
         </div>
       </div>
@@ -708,17 +541,12 @@
       <div class="wrap">
         <div class="form-box">
           <h2 class="section-title">Register interest</h2>
-
           <p class="section-intro">
             Add your details if you’d like updates or would be interested in solar, battery storage, community sustainability, a neighbourhood bulk-buy, or helping shape the idea.
           </p>
 
           <div class="placeholder-form">
-            <p>
-              <strong>Interest form coming soon.</strong><br />
-              This button can be linked to a Tally or Google Form once it is ready.
-            </p>
-
+            <p><strong>Interest form coming soon.</strong><br />This button can be linked to a Tally or Google Form once it is ready.</p>
             <a class="button" href="https://tally.so/" target="_blank" rel="noopener">Open interest form</a>
           </div>
 
